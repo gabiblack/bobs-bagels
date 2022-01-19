@@ -15,7 +15,7 @@ describe("Basket Tests: ", () => {
     it("adding an item to the basket", () => {
         // Arrange
         const testBasket = new Basket();
-        const testItem = new Item();
+        const testItem = new Item('plain', 6);
         // Act
         testBasket.addItem(testItem);
         // Assert
@@ -25,7 +25,7 @@ describe("Basket Tests: ", () => {
     it("removing an item from the basket", () => {
         // Arrange
         const testBasket = new Basket();
-        const testItem = new Item();
+        const testItem = new Item(`plain`, 6);
         testBasket.addItem(testItem);
         //Act
         testBasket.removeItem();
@@ -45,7 +45,7 @@ describe("Basket Tests: ", () => {
     it("check if basket is full", () => {
         // Arrange
         const testBasket = new Basket(1);
-        const item1 = new Item();
+        const item1 = new Item(`plain`, 6);
         testBasket.addItem(item1);
         // Act
         const actual = testBasket.isFull();
@@ -53,12 +53,48 @@ describe("Basket Tests: ", () => {
         expect(actual).toBeTrue();
     });
     // remomving a non existing item
-    // not allowing an already existig item
+    it("removing a non existing item", () => {
+        // Arrange
+        const testBasket = new Basket();
+        // Act
+        const actual = testBasket.removeItem();
+        // Assert
+        expect(actual).toBeUndefined();
+    });
+    // not allowing an already existig item to be added
+    it(`dissallowing adding an already existing item`, () => {
+        // Arrange
+        const testBasket = new Basket();
+        const item1 = new Item(`plain`, 6);
+        const item2 = new Item(`plain`, 6);
+        testBasket.addItem(item1);
+        // Act
+        const actual = testBasket.addItem(item2);
+        // Assert 
+        expect(actual).toBeUndefined();
+    });
     // sum total of basket
+    it(`sum of all items in the basket`, () => {
+        // Arrange
+        const testBasket = new Basket();
+        const item1 = new Item(`plain`, 6);
+        const item2 = new Item(`everything`, 8);
+        const item3 = new Item(`rye`, 4);
+        testBasket.addItem(item1);
+        testBasket.addItem(item2);
+        testBasket.addItem(item3);
+        // Act
+        let actual = testBasket.getItemTotal();
+        // Assert
+        expect(actual).toEqual(18);
+    });
+    // check item price before adding to basket
+    it(`check price of item`, () => {
+        // Arrange
+        const testItem = new Item(`plain`, 6);
+        // Act
+        const itemPrice = testItem.getPrice();
+        // Assert
+        expect(itemPrice).toEqual(6);
+    });
 });
-
-// making order
-
-// changing an order
-
-// item price before adding

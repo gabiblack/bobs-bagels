@@ -1,6 +1,15 @@
 class Item {
-    constructor() {
-
+    id;
+    price;
+    constructor(id, price) {
+        this.id = id;
+        this.price = price;
+    }
+    getId() {
+        return this.id;
+    }
+    getPrice() {
+        return this.price;
     }
 }
 
