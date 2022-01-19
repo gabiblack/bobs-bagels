@@ -1,0 +1,26 @@
+{
+  "name": "bobs-bagels",
+  "version": "1.0.0",
+  "description": "Bob's Bagels JS project",
+  "main": "main.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabiblack/bobs-bagels.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabiblack/bobs-bagels/issues"
+  },
+  "homepage": "https://github.com/gabiblack/bobs-bagels#readme",
+  "devDependencies": {
+    "jasmine": "^4.0.2"
+  }
+}
