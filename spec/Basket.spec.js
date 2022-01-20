@@ -59,7 +59,7 @@ describe("Basket Tests: ", () => {
         // Act
         const actual = testBasket.removeItem();
         // Assert
-        expect(actual).toBeUndefined();
+        expect(actual).toBeNull();
     });
     // not allowing an already existig item to be added
     it(`dissallowing adding an already existing item`, () => {

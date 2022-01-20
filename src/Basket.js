@@ -23,6 +23,7 @@ class Basket {
         const removedItem = this.items.pop();
         if (!removedItem) {
             console.log(`There are no more items to remove`);
+            return null;
         }
         return removedItem;
     }
