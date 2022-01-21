@@ -3,9 +3,13 @@
 # User Stories
 
 As a manager
-I want to identify supermarket items by SKU's
 So that I can have an inventory
+I want to store item SKU's and prices
 
 As a customer
-I want to save money
-So I make use of special offers
+So I can save money
+I want to use special offers
+
+As a manager
+So I can know my stock
+I want to be able get all the information on an item
