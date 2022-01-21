@@ -1,5 +1,3 @@
-const menu = require("./src/menu");
-const fs = require('fs');
+const menu = require("./src/menu.json");
 
-// fs.readFile()
-console.log(menu)
+console.log(menu.BGLE)

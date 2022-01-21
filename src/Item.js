@@ -1,7 +1,10 @@
+const menu = require("./menu.json")
+
 class Item {
     id;
     price;
-    constructor(id, price) {
+    constructor(sku, id, price) {
+        this.sku = sku;
         this.id = id;
         this.price = price;
     }
@@ -10,6 +13,9 @@ class Item {
     }
     getPrice() {
         return this.price;
+    }
+    getItem(sku) {
+        return menu[sku];
     }
 }
 
